@@ -3110,7 +3110,7 @@ Promise.all([promise1,promise2,promise3]).then(res=>{
 
 `race`方法和`all`一样，接受的参数是一个每项都是`promise`的数组，但是与`all`不同的是，当最先执行完的事件执行完之后，就直接返回该`promise`对象的值。如果第一个`promise`对象状态变成`resolved`，那自身的状态变成了`resolved`；反之第一个`promise`变成`rejected`，那自身状态就会变成`rejected`。
 
-```
+```js
 let promise1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
        reject(1);
@@ -3355,7 +3355,7 @@ console.log('cug')  //立即输出cug
 
 假设一个业务，分多个步骤完成，每个步骤都是异步的，而且依赖于上一个步骤的结果。仍然用 `setTimeout` 来模拟异步操作：
 
-```
+```js
 /**
  * 传入参数 n，表示这个函数执行的时间（毫秒）
  * 执行的结果是 n + 200，这个值将用于下一步骤
